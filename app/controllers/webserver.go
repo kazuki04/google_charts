@@ -12,7 +12,6 @@ var templates = template.Must(template.ParseFiles("app/views/index.html"))
 func viewChartHandler(w http.ResponseWriter, r *http.Request) {
 	err := templates.ExecuteTemplate(w, "index.html", nil)
 	if err != nil {
-		fmt.Println(111)
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
